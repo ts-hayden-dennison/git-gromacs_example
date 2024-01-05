@@ -2,7 +2,7 @@
 ;	File 'mdout.mdp' was generated
 ;	By user: hayden (1000)
 ;	On host: desk8
-;	At date: Fri Jan  5 16:46:03 2024
+;	At date: Fri Jan  5 16:48:50 2024
 ;
 ;	Created by:
 ;	                     :-) GROMACS - gmx grompp, 2023.3 (-:
@@ -11,7 +11,7 @@
 ;	Data prefix:  /usr/local/gromacs
 ;	Working dir:  /media/data8/hayden/git_project_example
 ;	Command line:
-;	  gmx grompp -f ions.mdp -c 1aki_solv.gro -p topol.top -o ions.tpr
+;	  gmx grompp -f minim.mdp -c 1aki_solv_ions.gro -p topol.top -o em.tpr
 
 ; VARIOUS PREPROCESSING OPTIONS
 ; Preprocessor information: use cpp syntax.
@@ -95,7 +95,7 @@ rlist                    = 1
 
 ; OPTIONS FOR ELECTROSTATICS AND VDW
 ; Method for doing electrostatics
-coulombtype              = cutoff
+coulombtype              = PME
 coulomb-modifier         = Potential-shift-Verlet
 rcoulomb-switch          = 0
 rcoulomb                 = 1.0
@@ -171,7 +171,7 @@ annealing-temp           =
 ; GENERATE VELOCITIES FOR STARTUP RUN
 gen-vel                  = no
 gen-temp                 = 300
-gen-seed                 = -138641613
+gen-seed                 = 1059057631
 
 ; OPTIONS FOR BONDS    
 constraints              = none
